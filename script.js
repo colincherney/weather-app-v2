@@ -12,12 +12,12 @@ if ($(window).width() < 1024) {
 
 function getWeather(location) {
   fetch(
-    "http://api.weatherapi.com/v1/current.json?key=f2c31ee9458142fbbd5231344232207&q=" +
+    "https://api.weatherapi.com/v1/current.json?key=f2c31ee9458142fbbd5231344232207&q=" +
       location +
       "&aqi=no"
   ),
     fetch(
-      "http://api.weatherapi.com/v1/forecast.json?key=f2c31ee9458142fbbd5231344232207&q=" +
+      "https://api.weatherapi.com/v1/forecast.json?key=f2c31ee9458142fbbd5231344232207&q=" +
         location +
         "&aqi=no"
     )
