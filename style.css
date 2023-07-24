@@ -29,6 +29,7 @@ video {
   text-align: center;
   border-radius: 200px 0px 0px 200px;
   border: none;
+  font-family: "Ysabeau SC", sans-serif;
 }
 
 #name {
@@ -37,6 +38,7 @@ video {
   left: 160px;
   color: white;
   font-size: 50px;
+  font-family: "Ysabeau SC", sans-serif;
 }
 
 #go {
@@ -52,4 +54,54 @@ video {
   border-radius: 0px 200px 200px 0px;
   border: none;
   cursor: pointer;
+  font-family: "Ysabeau SC", sans-serif;
+}
+
+#dayTemp {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 400px;
+  border: white dotted 4px;
+  background-color: rgba(20, 102, 86, 0.3);
+  color: white;
+  left: 150px;
+  padding: 10px;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+}
+
+#currentTemp {
+  margin: 0;
+}
+
+#feelsLike {
+  margin: 0;
+}
+
+#highTemp {
+  margin-bottom: 0;
+}
+
+#lowTemp {
+  margin-top: 0;
+}
+
+#conditionTitle {
+  margin-bottom: 0;
+}
+
+#currentCondition {
+  margin-top: 0;
+}
+
+#conditionIcon {
+  width: 70px;
+  height: auto;
+}
+
+#condition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
