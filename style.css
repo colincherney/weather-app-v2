@@ -1,20 +1,20 @@
 html {
   height: 100%;
   width: 100%;
-  overflow: hidden;
-  background: #000;
 }
 
 body {
   margin: 0;
   padding: 0;
   border: 0;
+  background: url("bg.jpg");
+  background-size: cover;
 }
 
-video {
+#mobileBg {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  background-size: contain;
 }
 
 #input {
