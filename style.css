@@ -105,3 +105,17 @@ video {
   justify-content: center;
   align-items: center;
 }
+
+#extraConditions {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 400px;
+  border: white dotted 4px;
+  background-color: rgba(20, 102, 86, 0.3);
+  color: white;
+  left: 650px;
+  padding: 10px;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+}

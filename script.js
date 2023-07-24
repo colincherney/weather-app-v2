@@ -32,6 +32,7 @@ function getWeather(location) {
 
         // remove assets
         $("#dayTemp").remove();
+        $("#extraConditions").remove();
 
         //current temps
         $("body").append("<div id='dayTemp'></div>");
@@ -82,6 +83,26 @@ function getWeather(location) {
           '<img src="' +
             response.current.condition.icon +
             '" alt="condition icon" id="conditionIcon"/>'
+        );
+
+        //append extra conditions div
+        $("body").append('<div id="extraConditions"></div>');
+
+        //append precipitation
+        $("#extraConditions").append(
+          "<h4>Precipitation: " +
+            response.forecast.forecastday[0].day.daily_chance_of_rain +
+            "%</h4>"
+        );
+
+        //append humidity
+        $("#extraConditions").append(
+          "<h4>Humidity: " + response.current.humidity + "%</h4>"
+        );
+
+        //append wind
+        $("#extraConditions").append(
+          "<h4>Wind: " + response.current.wind_mph + " mph</h4>"
         );
       })
       .catch(function (err) {
