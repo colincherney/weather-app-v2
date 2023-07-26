@@ -36,13 +36,16 @@
         <div class="weather-combine">
           <div class="weather-left">
             <div class="city-and-rain">
-              <h1>Scottsdale</h1>
-              <h5>Chance of rain: 0%</h5>
+              <div class="name-and-condition">
+                <h1 id="city-name">Scottsdale</h1>
+                <img src="sunny.png" alt="sunny" id="current-condition" />
+              </div>
+              <h5 id="rain-chance">Chance of rain: 0%</h5>
             </div>
-            <h1>89°</h1>
+            <h1 id="current-temp">89°</h1>
           </div>
           <div class="weather-right">
-            <img src="sunny.png" alt="sunny weather" />
+            <img src="weather-forecast.png" alt="forecast" />
           </div>
         </div>
         <div class="hourly-forecast">
@@ -50,33 +53,37 @@
           <div class="hourly-combine">
             <div class="hourly">
               <h5>6:00 am</h5>
-              <img src="sunny.png" alt="sunny weather" />
-              <h5>89°</h5>
+              <img src="sunny.png" alt="sunny weather" id="six-am-condition" />
+              <h5 id="six-am">89°</h5>
             </div>
             <div class="hourly">
               <h5>9:00 am</h5>
-              <img src="sunny.png" alt="sunny weather" />
-              <h5>89°</h5>
+              <img src="sunny.png" alt="sunny weather" id="nine-am-condition" />
+              <h5 id="nine-am">89°</h5>
             </div>
             <div class="hourly">
               <h5>12:00 pm</h5>
-              <img src="sunny.png" alt="sunny weather" />
-              <h5>89°</h5>
+              <img src="sunny.png" alt="sunny weather" id="noon-condition" />
+              <h5 id="noon">89°</h5>
             </div>
             <div class="hourly">
               <h5>3:00 pm</h5>
-              <img src="sunny.png" alt="sunny weather" />
-              <h5>89°</h5>
+              <img
+                src="sunny.png"
+                alt="sunny weather"
+                id="three-pm-condition"
+              />
+              <h5 id="three-pm">89°</h5>
             </div>
             <div class="hourly">
               <h5>6:00 pm</h5>
-              <img src="sunny.png" alt="sunny weather" />
-              <h5>89°</h5>
+              <img src="sunny.png" alt="sunny weather" id="six-pm-condition" />
+              <h5 id="six-pm">89°</h5>
             </div>
             <div class="hourly">
               <h5>9:00 pm</h5>
-              <img src="sunny.png" alt="sunny weather" />
-              <h5>89°</h5>
+              <img src="sunny.png" alt="sunny weather" id="nine-pm-condition" />
+              <h5 id="nine-pm">89°</h5>
             </div>
           </div>
         </div>
@@ -85,19 +92,19 @@
           <div class="combine-conditions">
             <div class="real-feal">
               <h5>Real Feel</h5>
-              <h1>91°</h1>
+              <h1 id="real-feel">91°</h1>
             </div>
             <div class="wind">
               <h5>Wind</h5>
-              <h1>5 mph</h1>
+              <h1 id="current-wind">5 mph</h1>
             </div>
             <div class="uv-index">
               <h5>UV Index</h5>
-              <h1>5</h1>
+              <h1 id="current-uv">5</h1>
             </div>
             <div class="humidity">
               <h5>Humidity</h5>
-              <h1>5%</h1>
+              <h1 id="current-humidity">5%</h1>
             </div>
           </div>
         </div>
@@ -105,60 +112,57 @@
       <div class="seven-day-forecast">
         <h4 id="forecast-text">7-Day Forecast</h4>
         <div class="forecast-combine">
-          <h3 class="forecast-day">Today</h3>
+          <h3 class="forecast-day" id="day-zero">Today</h3>
           <div class="condition-combine">
-            <img src="sunny.png" alt="sunny weather" />
-            <h3 class="condition-text">Sunny</h3>
+            <img src="sunny.png" alt="sunny weather" id="day-zero-conditions" />
           </div>
-          <h3 class="forecast-high-low">98/22</h3>
+          <h3 class="forecast-high-low" id="day-zero-temp">98/22</h3>
         </div>
         <div class="forecast-combine">
-          <h3 class="forecast-day">Monday</h3>
+          <h3 class="forecast-day" id="day-one">Monday</h3>
           <div class="condition-combine">
-            <img src="sunny.png" alt="sunny weather" />
-            <h3 class="condition-text">Sunny</h3>
+            <img src="sunny.png" alt="sunny weather" id="day-one-conditions" />
           </div>
-          <h3 class="forecast-high-low">98/22</h3>
+          <h3 class="forecast-high-low" id="day-one-temp">98/22</h3>
         </div>
         <div class="forecast-combine">
-          <h3 class="forecast-day">Tuesday</h3>
+          <h3 class="forecast-day" id="day-two">Tuesday</h3>
           <div class="condition-combine">
-            <img src="sunny.png" alt="sunny weather" />
-            <h3 class="condition-text">Sunny</h3>
+            <img src="sunny.png" alt="sunny weather" id="day-two-conditions" />
           </div>
-          <h3 class="forecast-high-low">98/22</h3>
+          <h3 class="forecast-high-low" id="day-two-temp">98/22</h3>
         </div>
         <div class="forecast-combine">
-          <h3 class="forecast-day">Wednesday</h3>
+          <h3 class="forecast-day" id="day-three">Wednesday</h3>
           <div class="condition-combine">
-            <img src="sunny.png" alt="sunny weather" />
-            <h3 class="condition-text">Sunny</h3>
+            <img
+              src="sunny.png"
+              alt="sunny weather"
+              id="day-three-conditions"
+            />
           </div>
-          <h3 class="forecast-high-low">98/22</h3>
+          <h3 class="forecast-high-low" id="day-three-temp">98/22</h3>
         </div>
         <div class="forecast-combine">
-          <h3 class="forecast-day">Thursday</h3>
+          <h3 class="forecast-day" id="day-four">Thursday</h3>
           <div class="condition-combine">
-            <img src="sunny.png" alt="sunny weather" />
-            <h3 class="condition-text">Sunny</h3>
+            <img src="sunny.png" alt="sunny weather" id="day-four-conditions" />
           </div>
-          <h3 class="forecast-high-low">98/22</h3>
+          <h3 class="forecast-high-low" id="day-four-temp">98/22</h3>
         </div>
         <div class="forecast-combine">
-          <h3 class="forecast-day">Friday</h3>
+          <h3 class="forecast-day" id="day-five">Friday</h3>
           <div class="condition-combine">
-            <img src="sunny.png" alt="sunny weather" />
-            <h3 class="condition-text">Sunny</h3>
+            <img src="sunny.png" alt="sunny weather" id="day-five-conditions" />
           </div>
-          <h3 class="forecast-high-low">98/22</h3>
+          <h3 class="forecast-high-low" id="day-five-temp">98/22</h3>
         </div>
         <div class="forecast-combine">
-          <h3 class="forecast-day">Saturday</h3>
+          <h3 class="forecast-day" id="day-six">Saturday</h3>
           <div class="condition-combine">
-            <img src="sunny.png" alt="sunny weather" />
-            <h3 class="condition-text">Sunny</h3>
+            <img src="sunny.png" alt="sunny weather" id="day-six-conditions" />
           </div>
-          <h3 class="forecast-high-low">98/22</h3>
+          <h3 class="forecast-high-low" id="day-six-temp">98/22</h3>
         </div>
       </div>
     </div>

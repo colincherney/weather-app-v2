@@ -112,10 +112,21 @@ body {
   color: white;
 }
 
+.name-and-condition {
+  display: flex;
+  gap: 15px;
+}
+
+.name-and-condition img {
+  width: 64px;
+  height: 64px;
+}
+
 .seven-day-forecast {
   background-color: #4c4e52;
   width: 500px;
   border-radius: 10px;
+  text-align: center;
 }
 
 #forecast-text {
@@ -149,8 +160,8 @@ body {
 }
 
 .forecast-combine img {
-  width: 50px;
-  height: auto;
+  width: 64px;
+  height: 64px;
   padding: 10px;
 }
 
