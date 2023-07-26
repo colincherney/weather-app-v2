@@ -1,121 +1,91 @@
-html {
-  height: 100%;
-  width: 100%;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: url("bg.jpg");
-  background-size: cover;
+  background-color: #28282b;
 }
 
-#mobileBg {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-}
-
-#input {
-  position: absolute;
-  top: 230px;
-  left: 150px;
-  z-index: 1;
-  height: 30px;
-  width: 300px;
-  opacity: 100;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 200px 0px 0px 200px;
-  border: none;
-  font-family: "Ysabeau SC", sans-serif;
-}
-
-#name {
-  position: absolute;
-  top: 100px;
-  left: 160px;
-  color: white;
-  font-size: 50px;
-  font-family: "Ysabeau SC", sans-serif;
-}
-
-#go {
-  position: absolute;
-  top: 230px;
-  left: 470px;
-  z-index: 1;
-  height: 32px;
-  width: 60px;
-  opacity: 100;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 0px 200px 200px 0px;
-  border: none;
-  cursor: pointer;
-  font-family: "Ysabeau SC", sans-serif;
-}
-
-#dayTemp {
+.sidebar {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 400px;
-  border: white dotted 4px;
-  background-color: rgba(20, 102, 86, 0.3);
-  color: white;
-  left: 150px;
+  background-color: #4c4e52;
   padding: 10px;
-  text-align: center;
-  font-family: "Ysabeau SC", sans-serif;
+  border-radius: 10px;
+  height: 800px;
 }
 
-#currentTemp {
-  margin: 0;
+.combine {
+  display: flex;
 }
 
-#feelsLike {
-  margin: 0;
-}
-
-#highTemp {
-  margin-bottom: 0;
-}
-
-#lowTemp {
-  margin-top: 0;
-}
-
-#conditionTitle {
-  margin-bottom: 0;
-}
-
-#currentCondition {
-  margin-top: 0;
-}
-
-#conditionIcon {
-  width: 70px;
+#weather-icon {
+  width: 30px;
   height: auto;
+  margin: 0;
 }
 
-#condition {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#extraConditions {
+.weather-button {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 400px;
-  border: white dotted 4px;
-  background-color: rgba(20, 102, 86, 0.3);
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
   color: white;
-  left: 650px;
-  padding: 10px;
-  text-align: center;
-  font-family: "Ysabeau SC", sans-serif;
+  transition: 0.2s;
+}
+
+#weather-button-text {
+  margin-top: 5px;
+}
+
+.weather-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.cities-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  color: white;
+  transition: 0.2s;
+}
+
+#cities-icon {
+  width: 30px;
+  height: auto;
+  margin: 0;
+}
+
+#cities-button-text {
+  margin-top: 5px;
+}
+
+.cities-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#settings-icon {
+  width: 30px;
+  height: auto;
+  margin: 0;
+}
+
+.settings-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  color: white;
+  transition: 0.2s;
+}
+
+#settings-button-text {
+  margin-top: 5px;
+}
+
+.settings-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }

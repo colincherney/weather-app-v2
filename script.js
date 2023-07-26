@@ -1,19 +1,3 @@
-// window.onresize = function () {
-//   if ($(window).width() < 1024) {
-//     $("#myVideo").remove();
-//     $("body").append('<img src="stars.jpg" id="mobileBg" alt="background">');
-//   } else {
-//     $("#mobileBg").remove();
-//     $("body").append(
-//       '<video autoplay muted loop id="myVideo" class="videoBg"><source src="cozy.mov" type="video/mp4" /></video>'
-//     );
-//   }
-// };
-
-if ($(window).width() < 1024) {
-  $("#myVideo").attr("src", "mobileBg.mov");
-}
-
 function getWeather(location) {
   fetch(
     "https://api.weatherapi.com/v1/current.json?key=f2c31ee9458142fbbd5231344232207&q=" +

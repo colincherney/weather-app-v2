@@ -13,31 +13,27 @@
     />
   </head>
   <body>
-    <h1 id="name">Storm Seekers</h1>
-    <input type="text" id="input" placeholder="Enter Location" />
-    <button id="go">Go</button>
-
-    <!-- <div id="dayTemp">
-      <h1 id="currentTemp">Current Temperature: 81</h1>
-      <h4 id="feelsLike">Feels Like: 80</h4>
-      <h1 id="highTemp">High: 102</h1>
-      <h1 id="lowTemp">Low: 81</h1>
-      <h1 id="conditionTitle">Condition:</h1>
-      <div id="condition">
-        <h2 id="currentCondition">Partly Cloudy</h2>
-        <img
-          src="//cdn.weatherapi.com/weather/64x64/night/113.png"
-          alt="condition icon"
-          id="conditionIcon"
-        />
+    <div class="combine">
+      <div class="sidebar">
+        <img src="sun.png" alt="sun icon" />
+        <div class="weather-button">
+          <img src="cloudy.png" alt="weather icon" id="weather-icon" />
+          <h4 id="weather-button-text">Weather</h4>
+        </div>
+        <div class="cities-button">
+          <img src="buildings.png" alt="cities icon" id="cities-icon" />
+          <h4 id="cities-button-text">Cities</h4>
+        </div>
+        <div class="settings-button">
+          <img src="cogwheel.png" alt="settings icon" id="settings-icon" />
+          <h4 id="settings-button-text">Settings</h4>
+        </div>
+      </div>
+      <div class="search">
+        <input type="text" id="input" placeholder="Search Location" />
+        <button id="go">Go</button>
       </div>
     </div>
-
-    <div id="extraConditions">
-      <h4>Precipitation: 2%</h4>
-      <h4>Humidity: 21%</h4>
-      <h4>Wind: 7 mph</h4>
-    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="script.js"></script>
