@@ -1,104 +1,197 @@
 function getWeather(location) {
   fetch(
-    "https://api.weatherapi.com/v1/current.json?key=f2c31ee9458142fbbd5231344232207&q=" +
+    "https://api.weatherapi.com/v1/forecast.json?key=f2c31ee9458142fbbd5231344232207&q=" +
       location +
-      "&aqi=no"
-  ),
-    fetch(
-      "https://api.weatherapi.com/v1/forecast.json?key=f2c31ee9458142fbbd5231344232207&q=" +
-        location +
-        "&aqi=no"
-    )
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (response) {
-        console.log(response);
-        console.log(response.current.temp_f);
+      "&&days=7&aqi=no&alerts=no"
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (response) {
+      console.log(response);
+      console.log(response.current.temp_f);
 
-        // display weather
+      // display information
 
-        // remove assets
-        $("#dayTemp").remove();
-        $("#extraConditions").remove();
+      //change location name
+      $("#city-name").text(
+        response.location.name + ", " + response.location.region
+      );
 
-        //current temps
-        $("body").append("<div id='dayTemp'></div>");
+      //change chance of rain
+      $("#rain-chance").text(
+        "Chance of rain: " +
+          response.forecast.forecastday[0].day.daily_chance_of_rain +
+          "%"
+      );
 
-        //append current temp
-        $("#dayTemp").append(
-          "<h1 id='currentTemp'>Current Temperature: " +
-            response.current.temp_f +
-            "°F</h1>"
-        );
+      //change current temp
+      $("#current-temp").text(response.current.temp_f + "°");
 
-        //append feels like temp
-        $("#dayTemp").append(
-          "<h4 id='feelsLike'>Feels Like: " +
-            response.current.feelslike_f +
-            "°F</h4>"
-        );
+      //hourly forecast
 
-        //append high temp
-        $("#dayTemp").append(
-          '<h1 id="highTemp">High: ' +
-            response.forecast.forecastday[0].day.maxtemp_f +
-            "°F</h1>"
-        );
+      //six am
+      $("#six-am").text(response.forecast.forecastday[0].hour[6].temp_f + "°");
+      $("#six-am-condition").attr(
+        "src",
+        response.forecast.forecastday[0].hour[6].condition.icon
+      );
 
-        //append low temp
-        $("#dayTemp").append(
-          '<h1 id="lowTemp">Low: ' +
-            response.forecast.forecastday[0].day.mintemp_f +
-            "°F</h1>"
-        );
+      //nine am
+      $("#nine-am").text(response.forecast.forecastday[0].hour[9].temp_f + "°");
+      $("#nine-am-condition").attr(
+        "src",
+        response.forecast.forecastday[0].hour[9].condition.icon
+      );
 
-        //append condition title
-        $("#dayTemp").append('<h1 id="conditionTitle">Condition:</h1>');
+      //twelve pm
+      $("#noon").text(response.forecast.forecastday[0].hour[12].temp_f + "°");
+      $("#noon-condition").attr(
+        "src",
+        response.forecast.forecastday[0].hour[12].condition.icon
+      );
 
-        //append condition div
-        $("#dayTemp").append('<div id="condition"></div>');
+      //three pm
+      $("#three-pm").text(
+        response.forecast.forecastday[0].hour[15].temp_f + "°"
+      );
+      $("#three-pm-condition").attr(
+        "src",
+        response.forecast.forecastday[0].hour[15].condition.icon
+      );
 
-        //append condition text
-        $("#condition").append(
-          '<h2 id="currentCondition">' +
-            response.current.condition.text +
-            "</h2>"
-        );
+      //six pm
+      $("#six-pm").text(response.forecast.forecastday[0].hour[18].temp_f + "°");
+      $("#six-pm-condition").attr(
+        "src",
+        response.forecast.forecastday[0].hour[18].condition.icon
+      );
 
-        //append condition icon
-        $("#condition").append(
-          '<img src="' +
-            response.current.condition.icon +
-            '" alt="condition icon" id="conditionIcon"/>'
-        );
+      //nine pm
+      $("#nine-pm").text(
+        response.forecast.forecastday[0].hour[21].temp_f + "°"
+      );
+      $("#nine-pm-condition").attr(
+        "src",
+        response.forecast.forecastday[0].hour[21].condition.icon
+      );
 
-        //append extra conditions div
-        $("body").append('<div id="extraConditions"></div>');
+      //current condition
+      $("#current-condition").attr("src", response.current.condition.icon);
 
-        //append precipitation
-        $("#extraConditions").append(
-          "<h4>Precipitation: " +
-            response.forecast.forecastday[0].day.daily_chance_of_rain +
-            "%</h4>"
-        );
+      //real feel
+      $("#real-feel").text(response.current.feelslike_f + "°");
 
-        //append humidity
-        $("#extraConditions").append(
-          "<h4>Humidity: " + response.current.humidity + "%</h4>"
-        );
+      //wind
+      $("#current-wind").text(response.current.wind_mph + " mph");
 
-        //append wind
-        $("#extraConditions").append(
-          "<h4>Wind: " + response.current.wind_mph + " mph</h4>"
-        );
-      })
-      .catch(function (err) {
-        console.log("error: " + err);
-      });
+      //uv index
+      $("#current-uv").text(response.current.uv);
+
+      //humidity
+      $("#current-humidity").text(response.current.humidity + "%");
+
+      //seven day forecast
+
+      //change dates
+      $("#day-zero").text(response.forecast.forecastday[0].date);
+      $("#day-one").text(response.forecast.forecastday[1].date);
+      $("#day-two").text(response.forecast.forecastday[2].date);
+      $("#day-three").text(response.forecast.forecastday[3].date);
+      $("#day-four").text(response.forecast.forecastday[4].date);
+      $("#day-five").text(response.forecast.forecastday[5].date);
+      $("#day-six").text(response.forecast.forecastday[6].date);
+
+      //change conditions
+      $("#day-zero-conditions").attr(
+        "src",
+        response.forecast.forecastday[0].day.condition.icon
+      );
+      $("#day-one-conditions").attr(
+        "src",
+        response.forecast.forecastday[1].day.condition.icon
+      );
+      $("#day-two-conditions").attr(
+        "src",
+        response.forecast.forecastday[2].day.condition.icon
+      );
+      $("#day-three-conditions").attr(
+        "src",
+        response.forecast.forecastday[3].day.condition.icon
+      );
+      $("#day-four-conditions").attr(
+        "src",
+        response.forecast.forecastday[4].day.condition.icon
+      );
+      $("#day-five-conditions").attr(
+        "src",
+        response.forecast.forecastday[5].day.condition.icon
+      );
+      $("#day-six-conditions").attr(
+        "src",
+        response.forecast.forecastday[6].day.condition.icon
+      );
+
+      //change 7 day high/low temps
+      $("#day-zero-temp").text(
+        response.forecast.forecastday[0].day.maxtemp_f +
+          "°" +
+          " / " +
+          response.forecast.forecastday[0].day.mintemp_f +
+          "°"
+      );
+      $("#day-one-temp").text(
+        response.forecast.forecastday[1].day.maxtemp_f +
+          "°" +
+          " / " +
+          response.forecast.forecastday[1].day.mintemp_f +
+          "°"
+      );
+      $("#day-two-temp").text(
+        response.forecast.forecastday[2].day.maxtemp_f +
+          "°" +
+          " / " +
+          response.forecast.forecastday[2].day.mintemp_f +
+          "°"
+      );
+      $("#day-three-temp").text(
+        response.forecast.forecastday[3].day.maxtemp_f +
+          "°" +
+          " / " +
+          response.forecast.forecastday[3].day.mintemp_f +
+          "°"
+      );
+      $("#day-four-temp").text(
+        response.forecast.forecastday[4].day.maxtemp_f +
+          "°" +
+          " / " +
+          response.forecast.forecastday[4].day.mintemp_f +
+          "°"
+      );
+      $("#day-five-temp").text(
+        response.forecast.forecastday[5].day.maxtemp_f +
+          "°" +
+          " / " +
+          response.forecast.forecastday[5].day.mintemp_f +
+          "°"
+      );
+      $("#day-six-temp").text(
+        response.forecast.forecastday[6].day.maxtemp_f +
+          "°" +
+          " / " +
+          response.forecast.forecastday[6].day.mintemp_f +
+          "°"
+      );
+    });
 }
 
-$("#go").on("click", function () {
-  let location = $("input").val();
-  getWeather(location);
+$("#input").on("keyup", function (e) {
+  if (e.keyCode === 13) {
+    let location = $("#input").val();
+    getWeather(location);
+  }
+});
+
+$(document).ready(function () {
+  getWeather("Scottsdale");
 });
