@@ -1,5 +1,6 @@
 body {
   background-color: #28282b;
+  font-family: "Alegreya", serif;
 }
 
 .sidebar {
@@ -228,4 +229,22 @@ body {
   padding-top: 20px;
   padding-left: 20px;
   margin-bottom: 0;
+}
+
+.current-conditions {
+  background-color: #4c4e52;
+  margin: 50px;
+  color: white;
+  border-radius: 10px;
+}
+
+#current-conditions-text {
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.combine-conditions {
+  display: flex;
+  justify-content: space-around;
 }
