@@ -1,0 +1,25 @@
+.city {
+  display: flex;
+  background-color: #4c4e52;
+  color: white;
+  margin: 5px;
+  width: 1200px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: "Alegreya", serif;
+  font-size: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.city h5 {
+  margin: 5px;
+}
+
+.city:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  border: purple solid 1px;
+}

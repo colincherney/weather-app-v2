@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cities.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,12 +19,16 @@
       <div class="sidebar">
         <img src="sun.png" alt="sun icon" />
         <div class="weather-button">
-          <img src="cloudy.png" alt="weather icon" id="weather-icon" />
-          <h4 id="weather-button-text">Weather</h4>
+          <a href="index.html">
+            <img src="cloudy.png" alt="weather icon" id="weather-icon" />
+            <h4 id="weather-button-text">Weather</h4>
+          </a>
         </div>
         <div class="cities-button">
-          <img src="buildings.png" alt="cities icon" id="cities-icon" />
-          <h4 id="cities-button-text">Cities</h4>
+          <a onclick="showCities()">
+            <img src="buildings.png" alt="cities icon" id="cities-icon" />
+            <h4 id="cities-button-text">Cities</h4>
+          </a>
         </div>
         <div class="settings-button">
           <img src="cogwheel.png" alt="settings icon" id="settings-icon" />
@@ -170,5 +175,6 @@
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="script.js"></script>
+    <script src="cities.js"></script>
   </body>
 </html>
