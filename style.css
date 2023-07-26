@@ -9,6 +9,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   height: 800px;
+  font-family: "Alegreya", serif;
 }
 
 .combine {
@@ -88,4 +89,86 @@ body {
 .settings-button:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+#input {
+  background-color: #4c4e52;
+  color: white;
+  margin: 20px;
+  width: 1200px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: "Alegreya", serif;
+  font-size: 15px;
+}
+
+#input:focus {
+  outline: none;
+}
+
+#input::placeholder {
+  color: white;
+}
+
+.seven-day-forecast {
+  background-color: #4c4e52;
+  width: 500px;
+  border-radius: 10px;
+}
+
+#forecast-text {
+  color: white;
+  font-family: "Alegreya", serif;
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.forecast-day {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  margin-left: 30px;
+  color: lightgray;
+  font-family: "Alegreya", serif;
+  font-size: 15px;
+}
+
+.forecast-combine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 30px;
+  border-bottom: white solid 1px;
+}
+
+.forecast-combine img {
+  width: 50px;
+  height: auto;
+  padding: 10px;
+}
+
+.condition-text {
+  color: white;
+  font-family: "Alegreya", serif;
+}
+
+.condition-combine {
+  display: flex;
+  align-items: center;
+}
+
+.forecast-high-low {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Alegreya", serif;
+  font-size: 15px;
 }
