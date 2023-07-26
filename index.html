@@ -8,36 +8,160 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <h1 id="name">Storm Seekers</h1>
-    <input type="text" id="input" placeholder="Enter Location" />
-    <button id="go">Go</button>
-
-    <!-- <div id="dayTemp">
-      <h1 id="currentTemp">Current Temperature: 81</h1>
-      <h4 id="feelsLike">Feels Like: 80</h4>
-      <h1 id="highTemp">High: 102</h1>
-      <h1 id="lowTemp">Low: 81</h1>
-      <h1 id="conditionTitle">Condition:</h1>
-      <div id="condition">
-        <h2 id="currentCondition">Partly Cloudy</h2>
-        <img
-          src="//cdn.weatherapi.com/weather/64x64/night/113.png"
-          alt="condition icon"
-          id="conditionIcon"
-        />
+    <div class="combine">
+      <div class="sidebar">
+        <img src="sun.png" alt="sun icon" />
+        <div class="weather-button">
+          <img src="cloudy.png" alt="weather icon" id="weather-icon" />
+          <h4 id="weather-button-text">Weather</h4>
+        </div>
+        <div class="cities-button">
+          <img src="buildings.png" alt="cities icon" id="cities-icon" />
+          <h4 id="cities-button-text">Cities</h4>
+        </div>
+        <div class="settings-button">
+          <img src="cogwheel.png" alt="settings icon" id="settings-icon" />
+          <h4 id="settings-button-text">Settings</h4>
+        </div>
+      </div>
+      <div class="search-and-weather">
+        <div class="search">
+          <input type="text" id="input" placeholder="Search Location" />
+        </div>
+        <div class="weather-combine">
+          <div class="weather-left">
+            <div class="city-and-rain">
+              <h1>Scottsdale</h1>
+              <h5>Chance of rain: 0%</h5>
+            </div>
+            <h1>89°</h1>
+          </div>
+          <div class="weather-right">
+            <img src="sunny.png" alt="sunny weather" />
+          </div>
+        </div>
+        <div class="hourly-forecast">
+          <h5 id="todays-forecast">Today's Forecast:</h5>
+          <div class="hourly-combine">
+            <div class="hourly">
+              <h5>6:00 am</h5>
+              <img src="sunny.png" alt="sunny weather" />
+              <h5>89°</h5>
+            </div>
+            <div class="hourly">
+              <h5>9:00 am</h5>
+              <img src="sunny.png" alt="sunny weather" />
+              <h5>89°</h5>
+            </div>
+            <div class="hourly">
+              <h5>12:00 pm</h5>
+              <img src="sunny.png" alt="sunny weather" />
+              <h5>89°</h5>
+            </div>
+            <div class="hourly">
+              <h5>3:00 pm</h5>
+              <img src="sunny.png" alt="sunny weather" />
+              <h5>89°</h5>
+            </div>
+            <div class="hourly">
+              <h5>6:00 pm</h5>
+              <img src="sunny.png" alt="sunny weather" />
+              <h5>89°</h5>
+            </div>
+            <div class="hourly">
+              <h5>9:00 pm</h5>
+              <img src="sunny.png" alt="sunny weather" />
+              <h5>89°</h5>
+            </div>
+          </div>
+        </div>
+        <div class="current-conditions">
+          <h5 id="current-conditions-text">Current Conditions:</h5>
+          <div class="combine-conditions">
+            <div class="real-feal">
+              <h5>Real Feel</h5>
+              <h1>91°</h1>
+            </div>
+            <div class="wind">
+              <h5>Wind</h5>
+              <h1>5 mph</h1>
+            </div>
+            <div class="uv-index">
+              <h5>UV Index</h5>
+              <h1>5</h1>
+            </div>
+            <div class="humidity">
+              <h5>Humidity</h5>
+              <h1>5%</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="seven-day-forecast">
+        <h4 id="forecast-text">7-Day Forecast</h4>
+        <div class="forecast-combine">
+          <h3 class="forecast-day">Today</h3>
+          <div class="condition-combine">
+            <img src="sunny.png" alt="sunny weather" />
+            <h3 class="condition-text">Sunny</h3>
+          </div>
+          <h3 class="forecast-high-low">98/22</h3>
+        </div>
+        <div class="forecast-combine">
+          <h3 class="forecast-day">Monday</h3>
+          <div class="condition-combine">
+            <img src="sunny.png" alt="sunny weather" />
+            <h3 class="condition-text">Sunny</h3>
+          </div>
+          <h3 class="forecast-high-low">98/22</h3>
+        </div>
+        <div class="forecast-combine">
+          <h3 class="forecast-day">Tuesday</h3>
+          <div class="condition-combine">
+            <img src="sunny.png" alt="sunny weather" />
+            <h3 class="condition-text">Sunny</h3>
+          </div>
+          <h3 class="forecast-high-low">98/22</h3>
+        </div>
+        <div class="forecast-combine">
+          <h3 class="forecast-day">Wednesday</h3>
+          <div class="condition-combine">
+            <img src="sunny.png" alt="sunny weather" />
+            <h3 class="condition-text">Sunny</h3>
+          </div>
+          <h3 class="forecast-high-low">98/22</h3>
+        </div>
+        <div class="forecast-combine">
+          <h3 class="forecast-day">Thursday</h3>
+          <div class="condition-combine">
+            <img src="sunny.png" alt="sunny weather" />
+            <h3 class="condition-text">Sunny</h3>
+          </div>
+          <h3 class="forecast-high-low">98/22</h3>
+        </div>
+        <div class="forecast-combine">
+          <h3 class="forecast-day">Friday</h3>
+          <div class="condition-combine">
+            <img src="sunny.png" alt="sunny weather" />
+            <h3 class="condition-text">Sunny</h3>
+          </div>
+          <h3 class="forecast-high-low">98/22</h3>
+        </div>
+        <div class="forecast-combine">
+          <h3 class="forecast-day">Saturday</h3>
+          <div class="condition-combine">
+            <img src="sunny.png" alt="sunny weather" />
+            <h3 class="condition-text">Sunny</h3>
+          </div>
+          <h3 class="forecast-high-low">98/22</h3>
+        </div>
       </div>
     </div>
-
-    <div id="extraConditions">
-      <h4>Precipitation: 2%</h4>
-      <h4>Humidity: 21%</h4>
-      <h4>Wind: 7 mph</h4>
-    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="script.js"></script>
