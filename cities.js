@@ -28,11 +28,12 @@ function showCities() {
       "<div class='city'><h5>" + cities[i] + "</h5></div>"
     );
   }
-  hover();
+  click();
 }
 
-function hover() {
+function click() {
   $(".city").on("click", function () {
-    console.log("test");
+    let city = $(this).text();
+    getWeather(city);
   });
 }

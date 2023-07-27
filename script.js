@@ -11,6 +11,14 @@ function getWeather(location) {
       console.log(response);
       console.log(response.current.temp_f);
 
+      $(".search-and-weather").empty();
+      $(".search-and-weather").append(
+        "<div class='search'><input type='text' id='input' placeholder='Search Location' /> </div>"
+      );
+      $(".search-and-weather").append(weatherCombine);
+      $(".search-and-weather").append(todaysForecast);
+      $(".search-and-weather").append(currentConditions);
+
       // display information
 
       //change location name
@@ -185,7 +193,7 @@ function getWeather(location) {
     });
 }
 
-$("#input").on("keyup", function (e) {
+$("body").on("keyup", "#input", function (e) {
   if (e.keyCode === 13) {
     let location = $("#input").val();
     getWeather(location);
