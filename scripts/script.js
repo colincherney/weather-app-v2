@@ -7,7 +7,10 @@ function getWeather(location) {
       "&&days=7&aqi=no&alerts=no"
   )
     .then(function (response) {
-      return response.json();
+      if (response.ok) {
+        return response.json();
+      }
+      invalidLocation();
     })
     .then(function (response) {
       console.log(response);
