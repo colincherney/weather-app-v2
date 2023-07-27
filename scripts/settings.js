@@ -1,5 +1,7 @@
 let counterTemperatureUnit = 0;
 let tempUnit = "farenheit";
+let counterWindUnit = 0;
+let windUnit = "mph";
 
 function settings() {
   $(".search-and-weather").empty();
@@ -24,9 +26,15 @@ function settings() {
   }
   $("#combine-settings").append("<div id='wind-units'>Wind Units</div>");
   $("#wind-units").append("<div class='choose-unit'>mph / kmh</div>");
-  $("#wind-units").append(
-    '<label class="switch"><input type="checkbox" value="mph" id="wind-unit-slider"><span class="slider round"></span></label>'
-  );
+  if (windUnit === "mph") {
+    $("#wind-units").append(
+      '<label class="switch"><input type="checkbox" value="mph" id="wind-unit-slider"><span class="slider round"></span></label>'
+    );
+  } else {
+    $("#wind-units").append(
+      '<label class="switch"><input type="checkbox" value="mph" id="wind-unit-slider" checked><span class="slider round"></span></label>'
+    );
+  }
 }
 
 $("body").on("click", "#temp-unit-slider", function () {
@@ -53,4 +61,14 @@ $("body").on("input", "#temp-unit-slider", function () {
   } else {
     updateCelsius(getLocation);
   }
+});
+
+$("body").on("click", "#wind-unit-slider", function () {
+  counterWindUnit++;
+  if (counterWindUnit % 2 === 0) {
+    windUnit = "mph";
+  } else {
+    windUnit = "kmh";
+  }
+  console.log(windUnit);
 });

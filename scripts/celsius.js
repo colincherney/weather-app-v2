@@ -91,7 +91,11 @@ function getWeatherCelsius(location) {
       $("#real-feel").text(response.current.feelslike_c + "°");
 
       //wind
-      $("#current-wind").text(response.current.wind_mph + " mph");
+      if (windUnit === "mph") {
+        $("#current-wind").text(response.current.wind_mph + " mph");
+      } else {
+        $("#current-wind").text(response.current.wind_kph + " km/h");
+      }
 
       //uv index
       $("#current-uv").text(response.current.uv);
