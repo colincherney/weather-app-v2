@@ -1,4 +1,4 @@
-let counter = 0;
+let counterTemperatureUnit = 0;
 let tempUnit = "farenheit";
 
 function settings() {
@@ -10,8 +10,9 @@ function settings() {
   $("#settings").append("<div id='settings-title'>Settings</div>");
 
   //append farenheit or celsius
-  $("#settings").append("<div id='temp-units'>Temperature Units</div>");
-  $("#temp-units").append("<div id='choose-unit'>Farenheit / Celsius</div>");
+  $("#settings").append("<div id='combine-settings'></div>");
+  $("#combine-settings").append("<div id='temp-units'>Temperature Units</div>");
+  $("#temp-units").append("<div class='choose-unit'>Farenheit / Celsius</div>");
   if (tempUnit === "farenheit") {
     $("#temp-units").append(
       '<label class="switch"><input type="checkbox" value="farenheit" id="temp-unit-slider"><span class="slider round"></span></label>'
@@ -21,11 +22,16 @@ function settings() {
       '<label class="switch"><input type="checkbox" value="farenheit" id="temp-unit-slider" checked><span class="slider round"></span></label>'
     );
   }
+  $("#combine-settings").append("<div id='wind-units'>Wind Units</div>");
+  $("#wind-units").append("<div class='choose-unit'>mph / kmh</div>");
+  $("#wind-units").append(
+    '<label class="switch"><input type="checkbox" value="mph" id="wind-unit-slider"><span class="slider round"></span></label>'
+  );
 }
 
 $("body").on("click", "#temp-unit-slider", function () {
-  counter++;
-  if (counter % 2 === 0) {
+  counterTemperatureUnit++;
+  if (counterTemperatureUnit % 2 === 0) {
     tempUnit = "farenheit";
   } else {
     tempUnit = "celsius";
