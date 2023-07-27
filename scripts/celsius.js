@@ -1,6 +1,4 @@
-let getLocation = "Scottsdale";
-
-function getWeather(location) {
+function getWeatherCelsius(location) {
   fetch(
     "https://api.weatherapi.com/v1/forecast.json?key=f2c31ee9458142fbbd5231344232207&q=" +
       location +
@@ -11,7 +9,7 @@ function getWeather(location) {
     })
     .then(function (response) {
       console.log(response);
-      console.log(response.current.temp_f);
+      console.log(response.current.temp_c);
 
       $(".search-and-weather").empty();
       $(".search-and-weather").append(
@@ -36,26 +34,26 @@ function getWeather(location) {
       );
 
       //change current temp
-      $("#current-temp").text(response.current.temp_f + "°");
+      $("#current-temp").text(response.current.temp_c + "°");
 
       //hourly forecast
 
       //six am
-      $("#six-am").text(response.forecast.forecastday[0].hour[6].temp_f + "°");
+      $("#six-am").text(response.forecast.forecastday[0].hour[6].temp_c + "°");
       $("#six-am-condition").attr(
         "src",
         response.forecast.forecastday[0].hour[6].condition.icon
       );
 
       //nine am
-      $("#nine-am").text(response.forecast.forecastday[0].hour[9].temp_f + "°");
+      $("#nine-am").text(response.forecast.forecastday[0].hour[9].temp_c + "°");
       $("#nine-am-condition").attr(
         "src",
         response.forecast.forecastday[0].hour[9].condition.icon
       );
 
       //twelve pm
-      $("#noon").text(response.forecast.forecastday[0].hour[12].temp_f + "°");
+      $("#noon").text(response.forecast.forecastday[0].hour[12].temp_c + "°");
       $("#noon-condition").attr(
         "src",
         response.forecast.forecastday[0].hour[12].condition.icon
@@ -63,7 +61,7 @@ function getWeather(location) {
 
       //three pm
       $("#three-pm").text(
-        response.forecast.forecastday[0].hour[15].temp_f + "°"
+        response.forecast.forecastday[0].hour[15].temp_c + "°"
       );
       $("#three-pm-condition").attr(
         "src",
@@ -71,7 +69,7 @@ function getWeather(location) {
       );
 
       //six pm
-      $("#six-pm").text(response.forecast.forecastday[0].hour[18].temp_f + "°");
+      $("#six-pm").text(response.forecast.forecastday[0].hour[18].temp_c + "°");
       $("#six-pm-condition").attr(
         "src",
         response.forecast.forecastday[0].hour[18].condition.icon
@@ -79,7 +77,7 @@ function getWeather(location) {
 
       //nine pm
       $("#nine-pm").text(
-        response.forecast.forecastday[0].hour[21].temp_f + "°"
+        response.forecast.forecastday[0].hour[21].temp_c + "°"
       );
       $("#nine-pm-condition").attr(
         "src",
@@ -90,7 +88,7 @@ function getWeather(location) {
       $("#current-condition").attr("src", response.current.condition.icon);
 
       //real feel
-      $("#real-feel").text(response.current.feelslike_f + "°");
+      $("#real-feel").text(response.current.feelslike_c + "°");
 
       //wind
       $("#current-wind").text(response.current.wind_mph + " mph");
@@ -144,68 +142,53 @@ function getWeather(location) {
 
       //change 7 day high/low temps
       $("#day-zero-temp").text(
-        response.forecast.forecastday[0].day.maxtemp_f +
+        response.forecast.forecastday[0].day.maxtemp_c +
           "°" +
           " / " +
-          response.forecast.forecastday[0].day.mintemp_f +
+          response.forecast.forecastday[0].day.mintemp_c +
           "°"
       );
       $("#day-one-temp").text(
-        response.forecast.forecastday[1].day.maxtemp_f +
+        response.forecast.forecastday[1].day.maxtemp_c +
           "°" +
           " / " +
-          response.forecast.forecastday[1].day.mintemp_f +
+          response.forecast.forecastday[1].day.mintemp_c +
           "°"
       );
       $("#day-two-temp").text(
-        response.forecast.forecastday[2].day.maxtemp_f +
+        response.forecast.forecastday[2].day.maxtemp_c +
           "°" +
           " / " +
-          response.forecast.forecastday[2].day.mintemp_f +
+          response.forecast.forecastday[2].day.mintemp_c +
           "°"
       );
       $("#day-three-temp").text(
-        response.forecast.forecastday[3].day.maxtemp_f +
+        response.forecast.forecastday[3].day.maxtemp_c +
           "°" +
           " / " +
-          response.forecast.forecastday[3].day.mintemp_f +
+          response.forecast.forecastday[3].day.mintemp_c +
           "°"
       );
       $("#day-four-temp").text(
-        response.forecast.forecastday[4].day.maxtemp_f +
+        response.forecast.forecastday[4].day.maxtemp_c +
           "°" +
           " / " +
-          response.forecast.forecastday[4].day.mintemp_f +
+          response.forecast.forecastday[4].day.mintemp_c +
           "°"
       );
       $("#day-five-temp").text(
-        response.forecast.forecastday[5].day.maxtemp_f +
+        response.forecast.forecastday[5].day.maxtemp_c +
           "°" +
           " / " +
-          response.forecast.forecastday[5].day.mintemp_f +
+          response.forecast.forecastday[5].day.mintemp_c +
           "°"
       );
       $("#day-six-temp").text(
-        response.forecast.forecastday[6].day.maxtemp_f +
+        response.forecast.forecastday[6].day.maxtemp_c +
           "°" +
           " / " +
-          response.forecast.forecastday[6].day.mintemp_f +
+          response.forecast.forecastday[6].day.mintemp_c +
           "°"
       );
     });
 }
-
-$("body").on("keyup", "#input", function (e) {
-  if (e.keyCode === 13) {
-    getLocation = $("#input").val();
-    if (tempUnit === "farenheit") {
-      getWeather(getLocation);
-    } else {
-      getWeatherCelsius(getLocation);
-    }
-  }
-});
-
-$(document).ready(function () {
-  getWeather("Scottsdale");
-});

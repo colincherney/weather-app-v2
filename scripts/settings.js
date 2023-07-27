@@ -12,9 +12,15 @@ function settings() {
   //append farenheit or celsius
   $("#settings").append("<div id='temp-units'>Temperature Units</div>");
   $("#temp-units").append("<div id='choose-unit'>Farenheit / Celsius</div>");
-  $("#temp-units").append(
-    '<label class="switch"><input type="checkbox" value="celsius" id="temp-unit-slider" name="temp-slider"><span class="slider round"></span></label>'
-  );
+  if (tempUnit === "farenheit") {
+    $("#temp-units").append(
+      '<label class="switch"><input type="checkbox" value="farenheit" id="temp-unit-slider"><span class="slider round"></span></label>'
+    );
+  } else {
+    $("#temp-units").append(
+      '<label class="switch"><input type="checkbox" value="farenheit" id="temp-unit-slider" checked><span class="slider round"></span></label>'
+    );
+  }
 }
 
 $("body").on("click", "#temp-unit-slider", function () {
@@ -25,4 +31,20 @@ $("body").on("click", "#temp-unit-slider", function () {
     tempUnit = "celsius";
   }
   console.log(tempUnit);
+});
+
+$("#sidebar-weather-button").on("click", function () {
+  if (tempUnit === "farenheit") {
+    getWeather(getLocation);
+  } else {
+    getWeatherCelsius(getLocation);
+  }
+});
+
+$("body").on("input", "#temp-unit-slider", function () {
+  if (tempUnit === "farenheit") {
+    updateFarenheit(getLocation);
+  } else {
+    updateCelsius(getLocation);
+  }
 });

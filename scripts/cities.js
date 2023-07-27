@@ -24,8 +24,13 @@ function showCities() {
 
 function click() {
   $(".city").on("click", function () {
+    getLocation = $(this).text();
     let city = $(this).text();
-    getWeather(city);
+    if (tempUnit === "farenheit") {
+      getWeather(city);
+    } else {
+      getWeatherCelsius(city);
+    }
   });
 }
 
