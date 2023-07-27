@@ -9,7 +9,6 @@
   padding: 5px;
   font-family: "Alegreya", serif;
   font-size: 15px;
-  margin-right: 20px;
   margin-left: 20px;
   text-align: center;
 }
@@ -20,6 +19,25 @@
 
 .city:hover {
   cursor: pointer;
-  transform: scale(1.01);
-  border: purple solid 1px;
+  background-color: #af9fc9;
+}
+
+.cities-list {
+  height: 715px;
+  overflow: auto;
+  margin-right: 20px;
+  position: absolute;
+}
+
+.cities-list::-webkit-scrollbar {
+  width: 1em;
+}
+
+.cities-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.cities-list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
