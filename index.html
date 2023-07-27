@@ -6,6 +6,7 @@
     <title>Weather</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="cities.css" />
+    <link rel="stylesheet" href="settings.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,8 +32,10 @@
           </a>
         </div>
         <div class="settings-button">
-          <img src="cogwheel.png" alt="settings icon" id="settings-icon" />
-          <h4 id="settings-button-text">Settings</h4>
+          <a onclick="settings()">
+            <img src="cogwheel.png" alt="settings icon" id="settings-icon" />
+            <h4 id="settings-button-text">Settings</h4>
+          </a>
         </div>
       </div>
       <div class="search-and-weather">
@@ -177,5 +180,6 @@
     <script src="script.js"></script>
     <script src="cities.js"></script>
     <script src="weather.js"></script>
+    <script src="settings.js"></script>
   </body>
 </html>
